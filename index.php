@@ -1,8 +1,6 @@
 <?php
 session_start();
 include("database.php");
-mysqli_close($connection);
-
 include("components/header.html");
 ?>
 
@@ -32,16 +30,38 @@ include("components/header.html");
 // check if login button is clicked en requet is made
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // hashing the password input for login
-    $hashPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
     // username and password key with form values for the session
     $_SESSION["username"] = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-    $_SESSION["password"] = $hashPassword;
+    $_SESSION["password"] = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
-    // echo "Welcome " . $_SESSION["username"] . ", your password is " . $_SESSION["password"];
+    $username = $_SESSION["username"];
+    $password = $_SESSION["password"];
 
-    header("Location: home.php");
+    // login logic that checks if values correspond with the database values
+    try {
+        $sql = "SELECT * FROM `users` WHERE user = '$username'";
+        $result = mysqli_query($connection, $sql);
+
+        // check if row with username exists
+        if (mysqli_num_rows($result) > 0) {
+            $row = mysqli_fetch_assoc($result);
+            $hashed_password = $row['password'];
+
+            // verify password input with hashed password in database
+            if(password_verify($password, $hashed_password)){
+                header("Location: home.php");
+            } else {
+                echo "Your password is wrong";
+            }
+        } else {
+            echo "Your username is wrong";
+        }
+    } catch (mysqli_sql_exception) {
+        echo "something went wrong";
+    }
+
+    // disconnect database connection
+    mysqli_close($connection);
 }
 
 if (empty($_SESSION)) {
@@ -49,8 +69,4 @@ if (empty($_SESSION)) {
 } else {
     echo "Session is active.";
 }
-
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
-//     echo "hello";
-// }
 ?>
