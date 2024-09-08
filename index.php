@@ -2,6 +2,8 @@
 session_start();
 include("database.php");
 mysqli_close($connection);
+
+include("components/header.html");
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +20,6 @@ mysqli_close($connection);
         <h1>Login</h1>
         <?php include("components/form.php"); ?>
     </main>
-    <a href="register.php">Register account</a>
 </body>
 
 </html>

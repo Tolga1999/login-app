@@ -1,11 +1,11 @@
-<form action="<?php $_SERVER["PHP_SELF"]?>" method="post">
+<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <label>Username:</label>
     <input type="text" name="username" required>
 
     <label>Password:</label>
     <input type="password" name="password" required>
 
-    <input type="submit" name="login" value="Log in">
+    <input type="submit" name="submit" value="Submit">
 </form>
 
 <style>

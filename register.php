@@ -1,6 +1,8 @@
 <?php
 session_start();
 include("database.php");
+
+include("components/header.html");
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +28,7 @@ include("database.php");
 </style>
 
 <?php
-if (isset($_POST["login"])) {
+if (isset($_POST["submit"])) {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
@@ -39,7 +41,7 @@ if (isset($_POST["login"])) {
         echo "could not register user";
     }
 
-    // what does this?
+    // disconnect database connection
     mysqli_close($connection);
 }
 ?>

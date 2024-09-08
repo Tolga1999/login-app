@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include("components/header.html");
 ?>
 
 <!DOCTYPE html>
