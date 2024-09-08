@@ -2,7 +2,7 @@
 session_start();
 include("database.php");
 
-include("components/header.html");
+include("components/header.php");
 ?>
 
 <!DOCTYPE html>

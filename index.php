@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("database.php");
-include("components/header.html");
+include("components/header.php");
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashed_password = $row['password'];
 
             // verify password input with hashed password in database
-            if(password_verify($password, $hashed_password)){
+            if (password_verify($password, $hashed_password)) {
                 header("Location: home.php");
             } else {
                 echo "Your password is wrong";

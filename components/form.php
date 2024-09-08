@@ -1,15 +1,15 @@
-<form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+<form class="login-register-form" action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <label>Username:</label>
     <input type="text" name="username" required>
 
     <label>Password:</label>
     <input type="password" name="password" required>
 
-    <input type="submit" name="submit" value="Submit">
+    <input class="login-register-button" type="submit" name="submit" value="Submit">
 </form>
 
 <style>
-    form {
+    .login-register-form {
         display: flex;
         gap: 0.5em;
         flex-direction: column;
@@ -17,7 +17,7 @@
         min-width: 20em;
     }
 
-    input[type=submit] {
+    .login-register-button {
         margin-top: 0.5em;
     }
 </style>
