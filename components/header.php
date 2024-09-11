@@ -19,8 +19,8 @@
 <style>
     header {
         width: 100%;
-        max-width: 40em;
-        margin-top: 1em;
+        max-width: 30em;
+        margin-top: 2em;
     }
 
     ul {
@@ -33,7 +33,7 @@
     }
 
     a{
-        color: #FFFF;
+        color: #F7F7F7;
         text-decoration: none;
         padding: 1em;
         transition: 0.25s;

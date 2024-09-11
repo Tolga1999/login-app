@@ -18,6 +18,15 @@ include("components/header.php");
     <main>
         <h1>Register account</h1>
         <?php include("components/form.php"); ?>
+        <span class="session-span">
+            <?php
+            if (empty($_SESSION)) {
+                echo "Session is killed or empty.";
+            } else {
+                echo "Session is active.";
+            }
+            ?>
+        </span>
     </main>
 </body>
 
@@ -25,6 +34,11 @@ include("components/header.php");
 
 <style>
     <?php include("global.css"); ?>
+
+    .session-span{
+        text-align: center;
+        margin-top: 1em;
+    }
 </style>
 
 <?php
