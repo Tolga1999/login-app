@@ -13,13 +13,18 @@ include("components/header.php");
 </head>
 
 <body>
-    <h1>Welcome <?php echo $_SESSION["username"]; ?></h1>
+    <main>
+        <h1>Welcome <?php echo $_SESSION["username"]; ?> to your profile</h1>
+        <h2>Would you like to make some changes?</h2>
+    </main>
 </body>
 
 </html>
 
 <style>
-    <?php include("global.css"); ?>
+    <?php include("global.css"); ?>body {
+        height: 100vh;
+    }
 </style>
 
 <?php

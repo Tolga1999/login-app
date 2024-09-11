@@ -15,7 +15,7 @@ include("components/header.php");
 
 <body>
     <main>
-        <h1>Login</h1>
+        <h1>Sign in</h1>
         <?php include("components/form.php"); ?>
 
         <span class="session-span">
