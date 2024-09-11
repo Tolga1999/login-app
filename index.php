@@ -34,8 +34,8 @@ include("components/header.php");
 
 <style>
     <?php include("global.css"); ?>
-
-    .session-span{
+    
+    .session-span {
         text-align: center;
         margin-top: 1em;
     }
@@ -77,5 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // disconnect database connection
     mysqli_close($connection);
+}
+// redirect to home.php if there is an existing session
+if (!empty($_SESSION)) {
+    header("Location: home.php");
 }
 ?>
