@@ -19,7 +19,8 @@
 <style>
     header {
         width: 100%;
-        max-width: 50em;
+        max-width: 40em;
+        margin-top: 1em;
     }
 
     ul {
@@ -29,6 +30,18 @@
         align-items: center;
         list-style-type: none;
         width: 100%;
+    }
+
+    a{
+        color: #FFFF;
+        text-decoration: none;
+        padding: 1em;
+        transition: 0.25s;
+        border-radius: 0.25em;
+    }
+
+    a:hover{
+        background-color: #3D3A50;
     }
 
     .logout-form{
