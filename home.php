@@ -22,9 +22,7 @@ include("components/header.php");
 </html>
 
 <style>
-    <?php include("global.css"); ?>body {
-        height: 100vh;
-    }
+    <?php include("global.css"); ?>
 </style>
 
 <?php

@@ -1,8 +1,27 @@
 <?php
 session_start();
 include("database.php");
-
 include("components/header.php");
+
+// define resonse message variable
+$response_message = "";
+
+if (isset($_POST["submit"])) {
+    $username = $_POST['username'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO users (user, password) VALUES ('$username', '$password')";
+
+    try {
+        mysqli_query($connection, $sql);
+        $response_message = "registered user to database";
+    } catch (mysqli_sql_exception) {
+        $response_message = "could not register user";
+    }
+
+    // disconnect database connection
+    mysqli_close($connection);
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +46,7 @@ include("components/header.php");
             }
             ?>
         </span>
+        <span class="response-span"> <?php echo $response_message ?> </span>
     </main>
 </body>
 
@@ -35,27 +55,12 @@ include("components/header.php");
 <style>
     <?php include("global.css"); ?>
 
-    .session-span{
+    .session-span, .response-span{
         text-align: center;
         margin-top: 1em;
     }
-</style>
 
-<?php
-if (isset($_POST["submit"])) {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO users (user, password) VALUES ('$username', '$password')";
-
-    try {
-        mysqli_query($connection, $sql);
-        echo "registered user to database";
-    } catch (mysqli_sql_exception) {
-        echo "could not register user";
+    .response-span{
+        margin-top: 0.5em;
     }
-
-    // disconnect database connection
-    mysqli_close($connection);
-}
-?>
+</style>

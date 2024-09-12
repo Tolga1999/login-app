@@ -72,6 +72,19 @@
     .logout-form {
         margin: 0;
     }
+
+    .logout-button{
+        font-size: 1em;
+        padding: 0.8em 3em;
+        color: #F7F7F7;
+        background-color: #580EF6;
+        border: none;
+        border-radius: 0.5em;
+    }
+
+    .logout-button:hover{
+        cursor: pointer;
+    }
 </style>
 
 <?php

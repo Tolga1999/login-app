@@ -20,7 +20,7 @@
         padding: 1.75em 1.5em;
         border-radius: 0.5em;
     }
-
+    
     input {
         padding: 0.8em;
         border-radius: 0.5em;
@@ -29,9 +29,9 @@
     }
 
     input[type="submit"] {
+        font-size: 1em;
         background-color: #580EF6;
         color: #F7F7F7;
-        font-weight: bold;
     }
 
     input[type="submit"]:hover {
