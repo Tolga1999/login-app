@@ -20,12 +20,13 @@
         padding: 1.75em 1.5em;
         border-radius: 0.5em;
     }
-    
+
     input {
         padding: 0.8em;
         border-radius: 0.5em;
         border: none;
         background-color: #F7F7F7;
+        width: 100%;
     }
 
     input[type="submit"] {
@@ -40,10 +41,9 @@
 
     .login-register-form {
         display: flex;
-        gap: 0.5em;
         flex-direction: column;
+        gap: 0.5em;
         width: 100%;
-        min-width: 25em;
     }
 
     label:nth-of-type(2),

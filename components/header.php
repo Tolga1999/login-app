@@ -44,6 +44,7 @@
         font-size: 2em;
         transition: 0.5s;
         padding: 0;
+        margin-right: 1em;
     }
 
     .logo a:hover {
@@ -64,7 +65,6 @@
     a {
         color: #F7F7F7;
         text-decoration: none;
-        padding: 1em;
         transition: 0.25s;
         border-radius: 0.25em;
     }
@@ -84,6 +84,12 @@
 
     .logout-button:hover{
         cursor: pointer;
+    }
+
+    @media screen and (min-width: 600px){
+        a {
+            padding: 1em;
+        }
     }
 </style>
 

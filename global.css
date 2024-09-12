@@ -5,7 +5,6 @@
 }
 
 body {
-    margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,7 +20,16 @@ h1{
 }
 
 main {
-    margin: auto;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
+    width: 100%;
+    max-width: 26em;
+    padding: 3em 1em;
+}
+
+@media screen and (min-width: 600px){
+    main {
+        justify-content: center;
+    }
 }

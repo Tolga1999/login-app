@@ -23,6 +23,11 @@ include("components/header.php");
 
 <style>
     <?php include("global.css"); ?>
+
+    main{
+        align-items: center;
+        max-width: 40em;
+    }
 </style>
 
 <?php
